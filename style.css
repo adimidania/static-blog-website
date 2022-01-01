@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+/* LET'S GO :) */
+:root {
+	font-size: 25px;
+	font-family: 'Quicksand', sans-serif;
+	--primary-color: #000000;
+    --secondary-color: #EBAD8F;
+	--third-color: #838385;
+	--transition-speed: 700ms;
+}
+/* GETTING RID OF SOME SHIT :) */
+* {
+	text-decoration: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-size: 1rem;
+	background-color: var(--primary-color);
+	color:white;
+}
+/* SCROLLBAR */
+body::-webkit-scrollbar {
+  width: 0.4rem;
+}
+body::-webkit-scrollbar-track {
+  background: white;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+}
+/* MOBILE FIRST APPROACH */
+/* NAVIGATION BAR */
+/* GIVING MY NAVIGATION BAR  A BACKGROUND COLOR */
+.navbar {
+	background-color: var(--primary-color);
+	padding: 1rem;
+}
+/* STYLING THE LOGO */
+.navbar .logo {
+	width: 40%;
+	font-size: 1.3rem;
+	color: white;
+}
+.navbar .logo span {
+	color: var(--secondary-color);
+}
+/* WE HIDE THE NAVIGATION BAR ELEMENTS , BECAUSE WE GONNA SHOW THEM WHEN THE USER CLICKS ON THE MENU BUTTON */
+.navbar nav {
+	display: none; 
+}
+/* WE MAKE OUR CONTAINER THAT HOLDS 3 ITEMS (LOGO,BUTTON,NAVIGATION LIST) A FLEX IN ORDER TO ALIGN THE ITEMS 
+PROPERLY */
+.navbar .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+/* WE STYLE ON MOBILE MENU */
+.mobile-menu {
+	/* THE CURSOR BECOMES A POINTER THAT INDICATES A LINK */
+	cursor: pointer; 
+}
+/* THIS IS MY NAVIGATION BAR THAT CONTAINS AN UNORDERED LIST */
+nav {
+	/* I WANT IT TO BE WITH A POSITION FIXED, IN TOP OF EVERYTHING ( A HIGH Z-INDEX ) */
+	position: fixed;
+	z-index: 999;
+	background-color:var(--secondary-color);;
+	/* I WANT IT TO TAKE 60% OF THE SCREEN WIDTH AND 100% OF THE SCREEN HEIGHT*/
+	height: 100vh;
+	width: 60vw;
+	/* ALSO, IT HAS TO BE PUSHED TO THE RIGHT AND TO THE TOP */
+	right: 0;
+	top: 0; 
+	/* A LITTLE BIT OF PADIING */
+	padding: 1rem;
+}
+/* WELL, MY LIST HAS TO BE PUSHED A LITTLE BIT TO THE BOTTOM */
+nav ul.nav {
+	margin-top: 4rem;
+}
+/* LET'S STYLE THE LIST LINKS*/
+nav li a {
+	color: white;
+	display: block;
+	padding: .5rem;
+	font-size: 1.1rem;
+	text-align: right;
+}
+/* THE EXIT BUTTON HAS TO BE STYLED TOO */
+.mobile-menu-exit {
+	float: right;
+	margin: .5em;
+	cursor: pointer;	
+}
+/* THIS GUY OVER HERE WILL ALLOW US TO CONTROL THE NAVIGATION BAR */
+/* WHY nav.menu-btn works while .menu-btn doesn't work ? */
+nav.menu-btn {
+	display: block;
+    color:#fcfcfc;
+}
+
+a:hover{
+	color: var(--primary-color);
+	transition: var(--transition-speed);
+}
+/* HERO SECTION */
+.home {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+/* I WANT MY GIF TO BE RESPONSIVE! */
+.img-hero {
+	max-width: 100%;
+  	height: auto;
+	padding : 0 20px;
+	/* AND UNDER EVERYTHING */
+	z-index: -999;
+}
+/* ALL THE LOST SOULS MAINTAIN HERE */
+.quote-home {
+	font-weight: lighter;
+	padding-top: 50px;
+	padding-right: 15px;
+	padding-left: 15px;
+	font-size: 1.8rem;
+	text-align: center;
+}
+/* ABOUT HER SECTION */
+.about {
+	background-color: #fcfcfc;
+	color: black;
+	text-align: center;
+	padding: 30px 45px;
+}
+.about h2 {
+	padding-bottom: 5px;
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+.about p {
+	font-size: 1rem;
+	line-height: 1.8rem;
+}
+/* FOOTER */
+.social-footer {
+	height: 65px;
+	width: auto;
+}
+.contact {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+}
+.contact p {
+	font-size: 0.5rem;
+	padding-bottom: 10px;
+	letter-spacing: 1.5px;
+	opacity: 0.8;
+}
+/* Poems Page */
+.Poems-intro {
+	text-align:center;
+	font-size: 1.2rem;
+	padding: 50px;
+}
+.Poems-intro p span {
+	color:var(--secondary-color);
+}
+/* List of poems */
+.list-of-poems {
+	color:#fcfcfc;
+	padding: 0px 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+table {
+	width: 95%;
+	text-align: center;	
+	background-color: var(--secondary-color);
+	
+}
+.date {
+	color:white;
+	width: 50%;
+}
+.title a{
+	color: black;
+}
+.title a:hover{
+	color: white;
+}
+.date , .title {
+	padding-bottom: 10px;	
+}
+
+.content h1 {
+	font-weight: lighter;
+	padding-top: 50px;
+	padding-right: 15px;
+	padding-left: 15px;
+	font-size: 1.8rem;
+	text-align: center;
+}
+.content p{
+	padding:50px;
+	text-align: justify;
+}
+/* LET'S MOVE THE LARGER SCREENS */
+/* FOR SCREENS THAT HAVE 800PX OF WIDTH OR LARGER, GO AHEAD AND APPLY THIS RULES */
+@media only screen and (min-width: 800px) {
+	/* WELL! WE DON'T NEED ANYMORE THESE BUTTONS */
+	.mobile-menu,
+	.mobile-menu-exit {
+		display: none;
+	}
+	.navbar .container {
+		display: grid;
+		/* WE TWO COLUMNS , THE LOGO WILL TAKE 150PX AND THE REST WILL BE TOKEN BY THE NAV BAR */
+		grid-template-columns: 150px auto;
+		align-items: center;
+		/* justify-content: space-between; is already declared above */
+	}
+	/* THE NAV ELEMENT THAT CONTAINS A LIST */
+	.navbar nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		background: none;
+		position: unset;
+		/* SINCE THE WIDTH AND HEIGHT ARE SET TO 66% AND 100% IN THE MOBILE VERSION */
+		/* LET'S FIX THEM HERE */
+		height: auto;
+		width: 100%;
+		padding: 0;
+	}
+	.navbar nav ul {
+		display: flex;
+		flex-direction: row;
+	}
+	.navbar nav a {
+		font-size: 1rem;
+		padding: .1rem 1rem;
+	}
+	/* NO NEED TO PUSH THE NAV TO THE BOTTEM WITH 4REM THIS TIME, SO LET'S JUST RESET THE MARGIN TO 0 */
+	.navbar nav ul.nav {
+		margin: 0;
+	}
+	/* HERO SECTION */
+	a:hover{
+	color: var(--secondary-color);
+	}
+	.quote-home {
+	font-size: 2rem;
+	}
+	.about {
+		background-color: #fcfcfc;
+		color: black;
+		text-align: center;
+		padding: 30px 120px;
+	}
+	.Poems-intro {
+		padding: 50px 100px;
+	}
+	.list-of-poems {
+		color:#fcfcfc;
+		padding: 0px 100px;
+	}
+}
+@media only screen and (max-width: 300px) {
+	.quote {
+		display: none;
+	}
+	nav {
+		width: 100vw;
+	}
+	nav li a {
+		text-align:center;
+	}
+	h1 {
+		font-size: 1.2rem;
+	}
+}
